@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NugetWebsiteModern.Controllers
 {
-    public class HomeeController : Controller
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {
