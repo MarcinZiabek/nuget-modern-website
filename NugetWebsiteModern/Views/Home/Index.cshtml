@@ -1,8 +1,18 @@
-﻿@{
+﻿@using NugetWebsiteModern.Models;
+
+@{
 	ViewData["Title"] = "Home Page";
+
+	var statistics = ViewData["Statistics"] as Statistics;
 }
 
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
 
 <p>Use this area to provide additional information.</p>
+
+<p>Unique packages: @statistics.UniquePackages</p>
+<p>Total packages: @statistics.TotalPackages</p>
+<p>Downloads: @statistics.Downloads</p>
+
+
