@@ -8,6 +8,10 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Remove="wwwroot/images\logo-nuget.svg" />
   </ItemGroup>
@@ -18,6 +22,7 @@
     <Content Include="wwwroot\images\nuget.svg" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
@@ -31,6 +36,12 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Models\Package.d.ts">
+      <DependentUpon>Package.cs</DependentUpon>
+    </None>
+    <None Update="Models\PackageList.d.ts">
+      <DependentUpon>PackageList.cs</DependentUpon>
+    </None>
     <None Update="Models\Statistics.d.ts">
       <DependentUpon>Statistics.cs</DependentUpon>
     </None>

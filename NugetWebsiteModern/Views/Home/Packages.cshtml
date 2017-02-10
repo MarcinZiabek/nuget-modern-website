@@ -1,8 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Packages";
+﻿@using NugetWebsiteModern.Models;
+
+@{
+	ViewData["Title"] = "Home Page";
+
+	var packages = ViewData["Packages"] as List<Package>;
 }
 
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<div class="package-list container">
+	<div class="row">
 
-<p>Use this area to provide additional information.</p>
+		@foreach (var package in packages)
+		{
+			<div class="col-lg-4 col-md-6">
+				<div class="package row">
+
+					<div class="image col-sm-3">
+						<img src="@package.IconUrl" />
+					</div>
+
+					<div class="description col-sm-9">
+						<div class="package-overlay"></div>
+						
+						<h4>@package.Id</h4>
+						<p>@package.Summary</p>
+						<i class="fa fa-download"></i><downloads Number="@package.TotalDownloads"></downloads>
+					</div>
+				</div>
+			</div>
+		}
+
+	</div>
+</div>
+
+

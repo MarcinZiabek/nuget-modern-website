@@ -9,5 +9,6 @@ namespace NugetWebsiteModern.Repositories
     public interface IStatisticsRepository
     {
 		Task<Statistics> GetStatistics();
+		Task<PackageList> GetPackages();
 	}
 }

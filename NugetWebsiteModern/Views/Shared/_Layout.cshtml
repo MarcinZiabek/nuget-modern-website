@@ -8,16 +8,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>@ViewData["Title"] - NugetWebsiteModern</title>
 
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 		<environment names="Development">
 			<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 			<link rel="stylesheet" href="~/css/site.css" />
 		</environment>
+
 		<environment names="Staging,Production">
 			<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
 				  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
 				  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
 			<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 		</environment>
+
 		@Html.Raw(JavaScriptSnippet.FullScript)
 	</head>
 
@@ -32,7 +36,7 @@
 					</div>
 
 					<div class="buttons col-sm-9">
-						<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+						<a asp-area="" asp-controller="Home" asp-action="Index" class="active">Home</a>
 						<a asp-area="" asp-controller="Home" asp-action="Packages">Packages</a>
 						<a asp-area="" asp-controller="Home" asp-action="Statistics">Statistics</a>
 						<a asp-area="" asp-controller="Home" asp-action="Documentation">Documentation</a>
@@ -45,7 +49,7 @@
 
 		</div>
 
-		<div class="site-content container">
+		<div class="site-content">
 			@RenderBody()
 		</div>
 

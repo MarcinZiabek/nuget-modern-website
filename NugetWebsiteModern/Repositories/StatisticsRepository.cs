@@ -18,5 +18,13 @@ namespace NugetWebsiteModern.Repositories
 			var result = JsonConvert.DeserializeObject<Statistics>(resultString);
 			return result;
 		}
-    }
+
+		public async Task<PackageList> GetPackages()
+		{
+			HttpClient client = new HttpClient();
+			var resultString = await client.GetStringAsync("https://api-v2v3search-0.nuget.org/query");
+			var result = JsonConvert.DeserializeObject<PackageList>(resultString);
+			return result;
+		}
+	}
 }

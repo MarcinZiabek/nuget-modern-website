@@ -25,9 +25,9 @@ namespace NugetWebsiteModern.Controllers
 
         public IActionResult Packages()
         {
-            ViewData["Message"] = "Here will be the lists of available packages.";
+			ViewData["Packages"] = StatisticsRepositiory.GetPackages().Result.Data;
 
-            return View();
+			return View();
         }
 
         public IActionResult Statistics()

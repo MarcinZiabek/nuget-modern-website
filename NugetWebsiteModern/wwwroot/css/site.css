@@ -5,11 +5,15 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	font: 400 14px/1.8 "Lato", sans-serif;
-	background-color: white;
+	background-color: #F0F0F0;
 }
 
 .site-content {
 	padding-top: 100px;
+}
+
+h2 {
+	font-size: 26px;
 }
 
 /* BUTTONS */
@@ -21,6 +25,7 @@ a.active {
 	color: #999;
 	outline: none;
 }
+
 
 /* MENU */
 
@@ -50,52 +55,104 @@ a.active {
 .menu .buttons a {
 	display: inline-block;
 	padding: 18px 20px;
+	margin: 0px -5px;
 	height: 70px;
 	font-size: 20px;
 	font-weight: lighter;
 	color: white;
 }
 
-.menu .buttons a:hover {
+.menu a:hover,
+.menu a.active {
 	background-color: white;
 	color: #1583E9;
 	cursor: pointer;
 }
 
+/* HOME PAGE */
 
-
-
-
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.find-package {
+	background-color: #EEE;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+.find-package input {
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 2px solid #BBB;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+/* STATISTICS */
+.statistics {
+	text-align: center;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.statistics .fa {
+	width: 80px;
+	height: 80px;
+
+	background-color: #BBB;
+	color: white;
+
+	border-radius: 50%;
+	font-size: 40px;
+
+	text-align: center;
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+/* PACKAGE LIST */
+
+.package {
+	background-color: white;
+	height: 125px;
+
+	border: 2px solid transparent;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px rgba(96, 96, 96, 0.1);
+	
+	margin: 0px 0px 25px !important;
+	text-align: center;
+}
+
+.package div {
+	overflow: hidden;
+}
+
+.package-overlay {
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	width: 25px;
+	background: linear-gradient(to right, rgba(255,255,255,0), #fff);
+}
+
+.package:hover {
+	border-color: #BBB;
+	cursor: pointer;
+}
+
+.package * {
+	display: block;
+	margin: 0px auto;
+}
+
+.package .image {
+	padding: 0px;
+}
+
+.package img {
+	width: 70px;
+	max-height: 70px;
+}
+
+.package p {
+	font-size: 12px;
 }

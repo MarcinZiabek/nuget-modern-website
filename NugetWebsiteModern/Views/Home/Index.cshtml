@@ -6,13 +6,37 @@
 	var statistics = ViewData["Statistics"] as Statistics;
 }
 
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<div class="find-package container">
+	<div class="row">
 
-<p>Use this area to provide additional information.</p>
+		<form action="/" method="post">
+			<input type="text" name="package_name" value="" placeholder="Input package name" />
+		</form>
 
-<p>Unique packages: @statistics.UniquePackages</p>
-<p>Total packages: @statistics.TotalPackages</p>
-<p>Downloads: @statistics.Downloads</p>
+	</div>
+</div>
 
 
+<div class="container">
+	<div class="row">
+
+		<div class="statistics col-md-4">
+			<i class="fa fa-cube"></i>
+			<h3>@statistics.UniquePackages.ToString("#,#")</h3>
+			<p>Unique packages</p>
+		</div>
+
+		<div class="statistics col-md-4">
+			<i class="fa fa-database"></i>
+			<h3>@statistics.TotalPackages.ToString("#,#")</h3>
+			<p>Versions of packages</p>
+		</div>
+
+		<div class="statistics col-md-4">
+			<i class="fa fa-cloud-download"></i>
+			<h3>@statistics.Downloads.ToString("#,#")</h3>
+			<p>Total downloads</p>
+		</div>
+
+	</div>
+</div>
