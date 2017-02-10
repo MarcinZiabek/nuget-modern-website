@@ -33,16 +33,20 @@
 
 					<div class="buttons col-sm-9">
 						<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-						<a asp-area="" asp-controller="Home" asp-action="About">Packages</a>
-						<a asp-area="" asp-controller="Home" asp-action="Index">Statistics</a>
-						<a asp-area="" asp-controller="Home" asp-action="About">Documentation</a>
-						<a asp-area="" asp-controller="Home" asp-action="Contact">Download</a>
-						<a asp-area="" asp-controller="Home" asp-action="Contact">Blog</a>
+						<a asp-area="" asp-controller="Home" asp-action="Packages">Packages</a>
+						<a asp-area="" asp-controller="Home" asp-action="Statistics">Statistics</a>
+						<a asp-area="" asp-controller="Home" asp-action="Documentation">Documentation</a>
+						<a asp-area="" asp-controller="Home" asp-action="Download">Download</a>
+						<a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
 					</div>
 
 				</div>
 			</div>
 
+		</div>
+
+		<div class="site-content container">
+			@RenderBody()
 		</div>
 
 		<!--<nav class="navbar navbar-inverse navbar-fixed-top">

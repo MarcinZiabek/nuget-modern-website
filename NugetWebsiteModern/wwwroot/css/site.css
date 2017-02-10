@@ -8,8 +8,11 @@ html, body {
 	background-color: white;
 }
 
-/* BUTTONS */
+.site-content {
+	padding-top: 100px;
+}
 
+/* BUTTONS */
 a:hover,
 a:focus,
 a:active,
@@ -48,11 +51,9 @@ a.active {
 
 .menu .buttons a {
 	display: inline-block;
-	margin: 15px 5px;
-	padding: 3px 15px;
-	height: 40px;
-	border-radius: 10px;
-	font-size: 20px;
+	padding: 16px 20px;
+	height: 70px;
+	font-size: 22px;
 	font-weight: lighter;
 	color: white;
 }

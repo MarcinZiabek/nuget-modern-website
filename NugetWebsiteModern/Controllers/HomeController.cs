@@ -13,23 +13,44 @@ namespace NugetWebsiteModern.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Packages()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Here will be the lists of available packages.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Statistics()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Here will be some awesome charts.";
 
             return View();
         }
 
-        public IActionResult Error()
+		public IActionResult Documentation()
+		{
+			ViewData["Message"] = "What about a little bit of documentation?";
+
+			return View();
+		}
+
+		public IActionResult Download()
+		{
+			ViewData["Message"] = "Let's download some useful content!";
+
+			return View();
+		}
+
+		public IActionResult Blog()
+		{
+			ViewData["Message"] = "Yesterday, I have done really good stuff...";
+
+			return View();
+		}
+
+		public IActionResult Error()
         {
             return View();
-        }
-    }
+		}
+	}
 }
