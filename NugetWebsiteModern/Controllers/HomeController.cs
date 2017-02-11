@@ -37,13 +37,6 @@ namespace NugetWebsiteModern.Controllers
             return View();
         }
 
-		public IActionResult Documentation()
-		{
-			ViewData["Message"] = "What about a little bit of documentation?";
-
-			return View();
-		}
-
 		public IActionResult Download()
 		{
 			ViewData["Message"] = "Let's download some useful content!";

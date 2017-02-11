@@ -6,37 +6,149 @@
 	var statistics = ViewData["Statistics"] as Statistics;
 }
 
-<div class="find-package container">
-	<div class="row">
+<div class="find-package section">
+	<div class="container">
+		<div class="row">
 
-		<form action="/" method="post">
-			<input type="text" name="package_name" value="" placeholder="Input package name" />
-		</form>
+			<div class="col-md-5">
+				<h2>What is the NuGet?</h2>
+				<ul>
+					<li>NuGet is the package manager for the Microsoft development platform including .NET.</li>
+					<li>The NuGet client tools provide the ability to produce and consume packages.</li>
+					<li>The NuGet Gallery is the central package repository used by all package authors and consumers.</li>
+				</ul>
+			</div>
+
+			<div class="col-md-5 col-md-offset-1">
+				<h2>What do you need?</h2>
+
+				<form action="/" method="post">
+					<input type="text" name="package_name" value="" placeholder="Input package name" />
+					<button class="text-button" type="submit">Search</button>
+				</form>
+			</div>
+
+		</div>
 
 	</div>
 </div>
 
 
-<div class="container">
-	<div class="row">
+<div class="statistics-list section">
+	<div class="container">
+		<div class="row">
 
-		<div class="statistics col-md-4">
-			<i class="fa fa-cube"></i>
-			<h3>@statistics.UniquePackages.ToString("#,#")</h3>
-			<p>Unique packages</p>
+			<div class="statistics col-sm-4">
+				<i class="icon fa fa-database"></i>
+
+				<div class="text">
+					<h3>@statistics.UniquePackages.ToString("#,#")</h3>
+					<p>Unique packages</p>
+				</div>
+			</div>
+
+			<div class="statistics col-sm-4">
+				<i class="icon fa fa-code-fork"></i>
+
+				<div class="text">
+					<h3>@statistics.TotalPackages.ToString("#,#")</h3>
+					<p>Versions of packages</p>
+				</div>
+			</div>
+
+			<div class="statistics col-sm-4">
+				<i class="icon fa fa-cloud-download"></i>
+
+				<div class="text">
+					<h3>@statistics.Downloads.ToString("#,#")</h3>
+					<p>Total downloads</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3">
+				<i class="big-icon fa fa-rocket" aria-hidden="true"></i>
+			</div>
+
+			<div class="col-md-9">
+				<h2>Make your project powerful</h2>
+				<p>
+					You can develop your own package and share it via the NuGet Gallery. Read the documentation for more details on how to create and publish a package.
+				</p>
+
+				<a href="" class="text-button">How to create a package</a>
+			</div>
+
 		</div>
 
-		<div class="statistics col-md-4">
-			<i class="fa fa-database"></i>
-			<h3>@statistics.TotalPackages.ToString("#,#")</h3>
-			<p>Versions of packages</p>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-9">
+				<h2>How does it work?</h2>
+				<p>
+					When you use NuGet to install a package, it copies the library files to your solution and automatically updates your project (add references, change config files, etc.). If you remove a package, NuGet reverses whatever changes it made so that no clutter is left.
+				</p>
+			</div>
+
+			<div class="col-md-3">
+				<i class="big-icon fa fa-cogs" aria-hidden="true"></i>
+			</div>
+
 		</div>
 
-		<div class="statistics col-md-4">
-			<i class="fa fa-cloud-download"></i>
-			<h3>@statistics.Downloads.ToString("#,#")</h3>
-			<p>Total downloads</p>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3">
+				<i class="big-icon fa fa-plus" aria-hidden="true"></i>
+			</div>
+
+			<div class="col-md-9">
+				<h2>Share your packages</h2>
+				<p>
+					You can develop your own package and share it via the NuGet Gallery. Read the documentation for more details on how to create and publish a package.
+				</p>
+
+				<a href="" class="text-button">How to create a package</a>
+			</div>
+
 		</div>
 
+	</div>
+</div>
+
+<div class="about section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-2 col-md-offset-3 col-sm-4 hidden-xs">
+				<img src="~/images/foundation.png" />
+			</div>
+
+			<div class="col-md-4 col-sm-8">
+				<h4>© 2017 .NET Foundation</h4>
+				<a href="">Terms of Use</a>
+				<a href="">Privacy Policy</a>
+				<a href="">About the Gallery</a>
+				<a href="">Service status</a>
+			</div>
+
+		</div>
 	</div>
 </div>
