@@ -36,6 +36,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Models\Distribution.d.ts">
+      <DependentUpon>Distribution.cs</DependentUpon>
+    </None>
     <None Update="Models\Package.d.ts">
       <DependentUpon>Package.cs</DependentUpon>
     </None>
@@ -44,6 +47,9 @@
     </None>
     <None Update="Models\Statistics.d.ts">
       <DependentUpon>Statistics.cs</DependentUpon>
+    </None>
+    <None Update="Repositories\IDistributionsRepository.d.ts">
+      <DependentUpon>IDistributionsRepository.cs</DependentUpon>
     </None>
     <None Update="Repositories\IStatisticsRepository.d.ts">
       <DependentUpon>IStatisticsRepository.cs</DependentUpon>

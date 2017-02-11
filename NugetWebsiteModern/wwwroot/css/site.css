@@ -13,16 +13,30 @@ html, body {
 }
 
 h2 {
-	font-size: 26px;
+	font-size: 28px;
+	text-align: center;
+	margin-bottom: 35px;
+	color: #555;
+}
+
+h3 {
+	color: #777;
 }
 
 /* BUTTONS */
+
+a {
+	text-decoration: none;
+	color: #999;
+	outline: none;
+}
+
 a:hover,
 a:focus,
 a:active,
 a.active {
 	text-decoration: none;
-	color: #999;
+	color: #777;
 	outline: none;
 }
 
@@ -123,6 +137,11 @@ a.active {
 	text-align: center;
 }
 
+.package:hover {
+	border-color: #BBB;
+	cursor: pointer;
+}
+
 .package div {
 	overflow: hidden;
 }
@@ -133,11 +152,6 @@ a.active {
 	right: 25px;
 	width: 50px;
 	background: linear-gradient(to right, rgba(255,255,255,0), #fff);
-}
-
-.package:hover {
-	border-color: #BBB;
-	cursor: pointer;
 }
 
 .package * {
@@ -161,10 +175,6 @@ a.active {
 	max-height: 70px;
 }
 
-.package p {
-	font-size: 12px;
-}
-
 .package .no-icon {
 	width: 70px;
 	height: 70px;
@@ -182,7 +192,61 @@ a.active {
     align-items: center;
 }
 
-.package .downloads * {
+.package .information  {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.package .information * {
 	display: inline-block;
-	margin: 5px 3px;
+	color: #888;
+}
+
+.package .information span:first-child {
+	margin-right: 20px;
+}
+
+.package .information * {
+	display: inline-block;
+	margin: 0 2px;
+}
+
+
+/* DOWNLOADS */
+
+.distribution-category {
+	background-color: white;
+	border-radius: 15px;
+	margin-bottom: 25px;
+	text-align: center;
+	padding: 15px;
+
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+}
+
+.distribution-category .title {
+	background-color: #CCC;
+	border-radius: 15px 15px 0px 0px;
+	text-shadow: 0 0 20px rgba(96, 96, 96, 0.25);
+	padding: 10px 5px;
+	margin: -15px -15px 15px;
+}
+
+.distribution-category .title h3 {
+	color: white;
+	margin: 3px 0 0;
+}
+
+.distribution-category .links-list {
+	margin-top: 25px;
+}
+
+.distribution-category .links-list a {
+	display: block;
+	color: #777;
+}
+
+.distribution-category .links-list a:hover {
+	color: #1583E9;
+	text-decoration: underline;
 }

@@ -2,9 +2,90 @@
 	ViewData["Title"] = "Download";
 }
 
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="container">
+
+	<div class="row">
+
+		<div class="row col-lg-4 col-lg-offset-1 col-md-6">
+
+			<h2>Distributions for the Visual Studio</h2>
+
+			<div class="distribution-category">
+				<div class="title">
+					<h3>Visual Studio 2013</h3>
+				</div>
+
+				<div class="links-list">
+					<a href="https://dist.nuget.org/visualstudio-2013-vsix/v2.12.0/NuGet.Tools.vsix">VS 2013 VSIX (v2.12.0)</a>
+				</div>
+			</div>
+
+			<div class="distribution-category">
+				<div class="title">
+					<h3>Visual Studio 2015</h3>
+				</div>
+
+				<div class="links-list">
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix">VS 2015 VSIX - latest (v3.5.0)</a>
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/v3.5.0/NuGet.Tools.vsix">VS 2015 VSIX (v3.5.0)</a>
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/v3.4.4/NuGet.Tools.vsix">VS 2015 VSIX (v3.4.4)</a>
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/v3.3.0/NuGet.Tools.vsix">VS 2015 VSIX (v3.3.0)</a>
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/v3.2.0/NuGet.Tools.vsix">VS 2015 VSIX (v3.2.0)</a>
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/v3.1.1/NuGet.Tools.2015.vsix">VS 2015 VSIX (v3.1.1)</a>
+				</div>
+			</div>
+
+			<div class="distribution-category">
+				<div class="title">
+					<h3>Visual Studio 2017</h3>
+				</div>
+
+				<p>
+					NuGet 4.x is included in the Visual Studio 2017 installation. Latest NuGet releases are delivered as part of Visual Studio updates.
+				</p>
+				
+				<p>
+					Batteries are included!
+				</p>
+			</div>
+
+		</div>
+
+		<div class="col-lg-4 col-lg-offset-1 col-md-6">
+			<h2>Other distributions</h2>
+
+			<div class="distribution-category">
+				<div class="title">
+					<h3>Windows Commandline</h3>
+				</div>
+
+				<div class="links-list">
+					<a href="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe">nuget.exe - latest (v3.5.0)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v4.0.0-rc4/nuget.exe">nuget.exe (v4.0.0-rc4)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v3.5.0/nuget.exe">nuget.exe (v3.5.0)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v3.4.4/nuget.exe">nuget.exe (v3.4.4)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v3.3.0/nuget.exe">nuget.exe (v3.3.0)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v3.2.0/nuget.exe">nuget.exe (v3.2.0)</a>
+					<a href="https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe">nuget.exe (v2.8.6)</a>
+				</div>
+			</div>
+
+			<div class="distribution-category">
+				<div class="title">
+					<h3>Nightly builds?</h3>
+				</div>
+
+				<div class="links-list">
+					<a href="https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix">NuGet.CommandLine</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
 
 @Context.Request.Path
