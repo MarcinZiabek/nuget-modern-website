@@ -77,10 +77,46 @@ a.active {
 }
 
 .text-button:hover {
-    background-color: #B28158;
-    border-color: #B28158;
+    background-color: #1583E9;
+    border-color: #1583E9;
     color: #FFF;
     cursor: pointer;
+}
+
+/* FORMS */
+
+input {
+	display: block;
+	margin: 5px 10px;
+	border: 2px solid #999;
+	border-radius: 25px;
+	padding: 5px 15px;
+	color: #888;
+	font-size: 14px;
+}
+
+input[type=submit] {
+	margin: 50px auto 0px;
+	padding: 5px 15px;
+	min-width: unset;
+	border-radius: 25px;
+	color: #999;
+	background-color: white;
+	border-color: #999;
+}
+
+input[type=submit]:hover {
+	background-color: #1583E9;
+	border-color: #1583E9;
+	color: white;
+	cursor: pointer;
+}
+
+input:focus {
+	border-color: #1583E9;
+	color: #1583E9;
+	outline-width: 0;
+	outline-color: transparent;
 }
 
 /* MENU */
@@ -125,20 +161,54 @@ a.active {
 	cursor: pointer;
 }
 
+/* ABOUT */
+
+.about {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+	padding: 100px 25px 40px;
+	margin: -50px 0 25px;
+}
+
+.about img {
+	width: 100%;
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+}
+
+.about .characteristic {
+	margin: 0 auto 25px;
+	max-width: 400px;
+}
+
+.about .fa {
+	background-color: #BBB;
+	color: white;
+	border-radius: 50%;
+	width: 46px;
+	height: 46px;
+	font-size: 22px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 25px;
+}
+
 /* HOME PAGE */
 
 .find-package {
 	background-color: white;
-	padding: 25px 0;
 	margin-top: 0;
+	text-align: center;
+}
+
+.find-package form * {
+	display: inline-block;
 }
 
 .find-package input {
-	width: 100%;
-	padding: 5px 10px;
-	font-size: 20px;
-	border-radius: 5px;
-	border: 2px solid #BBB;
+	width: 250px;
 }
 
 .usage {
@@ -379,15 +449,15 @@ a.active {
 	text-decoration: underline;
 }
 
-/* ABOUT */
+/* FOOTER */
 
-.about {
+.footer {
 	background-color: white;
 	padding: 30px 0;
 	margin: 50px 0 0;
 }
 
-.about img {
+.footer img {
 	width: 75px;
 	margin: 0 auto;
 	margin-left: auto;
@@ -395,16 +465,16 @@ a.active {
 	float: none;
 }
 
-.about .links {
+.footer .links {
 	margin-top: 10px;
 }
 
-.about h4 {
-	margin-top: 20px;
+.footer h4 {
+	margin-top: 25px;
 	text-align: center;
 }
 
-.about a {
+.footer a {
 	display: block;
 	line-height: 125%;
 }

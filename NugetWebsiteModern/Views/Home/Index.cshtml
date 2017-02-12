@@ -6,33 +6,48 @@
 	var statistics = ViewData["Statistics"] as Statistics;
 }
 
-<div class="find-package section">
-	<div class="container">
+
+<div class="container">
+		
+	<div class="about">
 		<div class="row">
-
-			<div class="col-md-5">
+			<div class="col-md-6">
 				<h2>What is the NuGet?</h2>
-				<ul>
-					<li>NuGet is the package manager for the Microsoft development platform including .NET.</li>
-					<li>The NuGet client tools provide the ability to produce and consume packages.</li>
-					<li>The NuGet Gallery is the central package repository used by all package authors and consumers.</li>
-				</ul>
+
+				<div class="characteristic">
+					<i class="fa fa-sliders pull-left" aria-hidden="true"></i>
+					<p>NuGet is the package manager for the Microsoft development platform including .NET.</p>
+				</div>
+
+				<div class="characteristic">
+					<i class="fa fa-industry pull-left" aria-hidden="true"></i>
+					<p>The NuGet client tools provide the ability to produce and consume packages.</p>
+				</div>
+
+				<div class="characteristic">
+					<i class="fa fa-picture-o pull-left" aria-hidden="true"></i>
+					<p>The NuGet Gallery is the central package repository used by all package authors and consumers.</p>
+				</div>
 			</div>
 
-			<div class="col-md-5 col-md-offset-1">
-				<h2>What do you need?</h2>
-
-				<form action="/" method="post">
-					<input type="text" name="package_name" value="" placeholder="Input package name" />
-					<button class="text-button" type="submit">Search</button>
-				</form>
+			<div class="col-md-6">
+				<img src="~/images/nuget_visual_studio.png" alt="NuGet in the Visual Studio" />
 			</div>
-
 		</div>
+	</div>
+
+</div>
+
+<div class="section">
+	<div class="find-package container">
+
+		<form action="/" method="post">
+			<input type="text" name="package_name" value="" placeholder="Search package" />
+			<button class="text-button" type="submit">Search</button>
+		</form>
 
 	</div>
 </div>
-
 
 <div class="container">
 	<div class="row"> 
@@ -150,7 +165,7 @@
 </div>
 
 
-<div class="about section">
+<div class="footer section">
 	<div class="container">
 		<div class="row col-md-8 col-md-offset-2">
 
@@ -171,7 +186,7 @@
 			</div>
 
 			<div class="col-xs-12">
-				<h4>© 2017 .NET Foundation</h4>
+				<h4>2017 © .NET Foundation</h4>
 			</div>
 
 		</div>
