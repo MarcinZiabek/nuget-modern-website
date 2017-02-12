@@ -4,7 +4,12 @@ declare module server {
 		version: string;
 		description: string;
 		title: string;
+		summary: string;
 		iconUrl: string;
 		projectUrl: string;
+		licenseUrl: string;
+		totalDownloads: number;
+		authors: string[];
+		tags: string[];
 	}
 }

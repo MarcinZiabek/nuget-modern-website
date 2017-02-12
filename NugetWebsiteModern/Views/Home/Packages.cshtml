@@ -6,46 +6,74 @@
 	var packages = ViewData["Packages"] as List<Package>;
 }
 
+<div class="section">
+	<div class="find-package container">
+
+		<form action="/Home/Packages" method="get">
+			<input type="text" name="query" placeholder="Search package" value='@ViewData["Query"]' />
+			<button class="text-button" type="submit">Search</button>
+		</form>
+
+	</div>
+</div>
+
+<div class="section">
+	<div class="find-package container">
+
+		@if (String.IsNullOrWhiteSpace(ViewData["Query"] as string))
+		{
+			<p>Popular packages</p>
+		}
+		else
+		{
+			<p>Results: @ViewData["Results"]</p>
+		}
+
+	</div>
+</div>
+
 <div class="package-list container">
 	<div class="row">
 
 		@foreach (var package in packages)
 		{
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				<div class="package">
-					<div class="package-overlay"></div>
+			<a href="/Home/Package/@package.Id">
+				<div class="col-lg-3 col-md-4 col-sm-6">
+					<div class="package">
+						<div class="package-overlay"></div>
 
-					<div class="image">
-						@if (!String.IsNullOrEmpty(package.IconUrl))
-						{
-							<img src="@package.IconUrl" alt="No icon" />
-						}
-						else
-						{
-							<i class="no-icon fa fa-code"></i>
-						}
-					</div>
+						<div class="image">
+							@if (!String.IsNullOrEmpty(package.IconUrl))
+							{
+								<img src="@package.IconUrl" alt="No icon" />
+							}
+							else
+							{
+								<i class="no-icon fa fa-code"></i>
+							}
+						</div>
 
-					<div class="description">
-						<h4>@package.Id</h4>
+						<div class="description">
+							<h4>@package.Id</h4>
 
-						<span class="downloads">
-							
-						</span>
+							<span class="downloads">
 
-						<span class="information">
-							<span>
-								<i class="fa fa-code-fork"></i> @package.Version
 							</span>
 
-							<span>
-								<i class="fa fa-download"></i><downloads Number="@package.TotalDownloads"></downloads>
+							<span class="information">
+								<span>
+									<i class="fa fa-code-fork"></i> @package.Version
+								</span>
+
+								<span>
+									<i class="fa fa-download"></i><downloads Number="@package.TotalDownloads"></downloads>
+								</span>
 							</span>
-						</span>
-						
+
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 		}
 
 	</div>

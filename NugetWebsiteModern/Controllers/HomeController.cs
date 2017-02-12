@@ -23,14 +23,29 @@ namespace NugetWebsiteModern.Controllers
             return View();
         }
 
-        public IActionResult Packages()
+		public IActionResult Packages([FromQuery] string query="", [FromQuery] int page=0)
         {
-			ViewData["Packages"] = StatisticsRepositiory.GetPackages().Result.Data;
+			var packages = StatisticsRepositiory.GetPackages(query, page).Result;
+
+			ViewData["Query"] = query;
+			ViewData["Page"] = page;
+			ViewData["Packages"] = packages.Data;
+			ViewData["Results"] = packages.TotalHits;
 
 			return View();
         }
 
-        public IActionResult Statistics()
+		public IActionResult Package(string id)
+		{
+			ViewData["ID"] = id;
+
+			ViewData["Package"] = StatisticsRepositiory.GetPackage(id).Result;
+
+
+			return View();
+		}
+
+		public IActionResult Statistics()
         {
             ViewData["Message"] = "Here will be some awesome charts.";
 
