@@ -2,7 +2,7 @@
 
 @media (min-width: 1024px) {
 	.container {
-		width: 1024px;
+		width: 1024px !important;
 	}
 }
 
@@ -26,29 +26,26 @@ h2 {
 }
 
 h3 {
-	color: #777;
+	color: #666;
 }
 
 p {
 	text-align: justify;
+	color: #888;
+}
+
+hr {
+	border: 0;
+	height: 1.5px;
+	margin: 40px auto;
+	max-width: 750px;
+	background-image: linear-gradient(90deg,hsla(0,0%,78%,0),#c8c8c8,hsla(0,0%,78%,0));
 }
 
 .section {
 	padding: 15px 0;
 	margin: 50px 0;
 	background-color: white;
-}
-
-.big-icon {
-	width: 200px;
-	height: 200px;
-	color: #40BCFF;
-	border-radius: 50%;
-	font-size: 100px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 /* BUTTONS */
@@ -133,6 +130,7 @@ a.active {
 .find-package {
 	background-color: white;
 	padding: 25px 0;
+	margin-top: 0;
 }
 
 .find-package input {
@@ -143,8 +141,71 @@ a.active {
 	border: 2px solid #BBB;
 }
 
-/* STATISTICS */
+.usage {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+	padding: 40px 25px;
+	height: 400px;
+	margin: 15px 0;
+	text-align: center;
+}
 
+.usage h3 {
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.usage .fa {
+	color: #40BCFF;
+	border-radius: 50%;
+	font-size: 100px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.usage .text-button {
+	margin-top: 25px;
+}
+
+.useful {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+	border: 2px solid transparent;
+	padding: 40px 15px;
+	margin: 15px 0;
+	height: 275px;
+	text-align: center;
+}
+
+.useful:hover {
+	border-color: #BBB;
+	cursor: pointer;
+}
+
+.useful h3 {
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.useful .fa {
+	color: #40BCFF;
+	border-radius: 50%;
+	font-size: 60px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+/* STATISTICS */
 .statistics-list {
 	padding: 25px;
 }
@@ -323,17 +384,24 @@ a.active {
 .about {
 	background-color: white;
 	padding: 30px 0;
+	margin: 50px 0 0;
 }
 
 .about img {
 	width: 75px;
-	float: right !important;
-	margin-top: 12px;
+	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.about .links {
+	margin-top: 10px;
 }
 
 .about h4 {
-	margin-top: 0;
-	margin-bottom: 10;
+	margin-top: 20px;
+	text-align: center;
 }
 
 .about a {
