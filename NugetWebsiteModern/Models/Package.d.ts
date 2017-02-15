@@ -1,6 +1,7 @@
 declare module server {
 	interface package {
 		id: string;
+		id: string;
 		version: string;
 		description: string;
 		title: string;

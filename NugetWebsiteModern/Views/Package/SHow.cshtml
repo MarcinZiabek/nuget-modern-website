@@ -1,0 +1,20 @@
+@using NugetWebsiteModern.Models;
+
+@{
+	var Packagee = ViewData["Package"] as Package;
+}
+
+<h3>@Packagee.Id</h3>
+@Packagee.Summary
+
+
+<div class="container">
+	<div class="find-package section-first section">
+
+		<form action="/Home/Packages" method="get">
+			<input type="text" name="query" placeholder="Find other packages" value='@ViewData["Query"]' />
+			<button class="text-button" type="submit">Search</button>
+		</form>
+
+	</div>
+</div>

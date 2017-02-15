@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace NugetWebsiteModern.Repositories
 {
-    public interface IStatisticsRepository
+	public interface IPackageRepository
     {
-		Task<Statistics> GetStatistics();
+		Task<PackageList> GetPackages(string query = "", int page = 0);
+		Task<Package> GetPackage(string id);
 	}
 }

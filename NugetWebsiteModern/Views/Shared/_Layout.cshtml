@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>@ViewData["Title"] - NugetWebsiteModern</title>
 
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
 		<environment names="Development">
 			<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -37,8 +37,7 @@
 
 					<div class="buttons col-sm-9">
 						<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-						<a asp-area="" asp-controller="Home" asp-action="Packages" class="active">Packages</a>
-						<a asp-area="" asp-controller="Home" asp-action="Statistics">Statistics</a>
+						<a asp-area="" asp-controller="Package" asp-action="List" class="active">Packages</a>
 						<a href="https://docs.microsoft.com/en-us/nuget/">Documentation</a>
 						<a asp-area="" asp-controller="Home" asp-action="Download">Download</a>
 						<a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>

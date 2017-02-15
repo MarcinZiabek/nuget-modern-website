@@ -6,10 +6,10 @@
 	var packages = ViewData["Packages"] as List<Package>;
 }
 
-<div class="section">
-	<div class="find-package container">
+<div class="container">
+	<div class="find-package section-first section">
 
-		<form action="/Home/Packages" method="get">
+		<form action="/Package/List" method="get">
 			<input type="text" name="query" placeholder="Search package" value='@ViewData["Query"]' />
 			<button class="text-button" type="submit">Search</button>
 		</form>
@@ -17,19 +17,29 @@
 	</div>
 </div>
 
-<div class="section">
-	<div class="find-package container">
+<div class="section-wide section">
+	@{ 
+		var query = @ViewData["Query"];
 
-		@if (String.IsNullOrWhiteSpace(ViewData["Query"] as string))
-		{
-			<p>Popular packages</p>
-		}
-		else
-		{
-			<p>Results: @ViewData["Results"]</p>
-		}
+		var page_current = (int)@ViewData["Page"];
+		var page_before = page_current - 1;
+		var page_after = page_current + 1;
+	}
 
-	</div>
+
+	@if (String.IsNullOrWhiteSpace(ViewData["Query"] as string))
+	{
+		<h3>Popular packages</h3>
+	}
+	else if((int)ViewData["Results"] != 0)
+	{
+		<h3>@ViewData["Results"] results for "@ViewData["Query"]"</h3>
+	}
+	else
+	{
+		<h3>Sorry, there is no package like "@ViewData["Query"]"</h3>
+	}
+
 </div>
 
 <div class="package-list container">
@@ -37,7 +47,7 @@
 
 		@foreach (var package in packages)
 		{
-			<a href="/Home/Package/@package.Id">
+			<a href="/Package/Show/@package.Id">
 				<div class="col-lg-3 col-md-4 col-sm-6">
 					<div class="package">
 						<div class="package-overlay"></div>

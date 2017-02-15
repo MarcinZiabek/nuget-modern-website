@@ -14,6 +14,10 @@ html, body {
 	background-color: #F4F4F4;
 }
 
+body {
+	overflow-y: scroll;
+}
+
 .site-content {
 	padding-top: 70px;
 }
@@ -43,8 +47,22 @@ hr {
 }
 
 .section {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+	padding: 40px 25px;
+	margin: 25px 0;
+}
+
+.section-first {
+	padding: 100px 25px 40px;
+	margin: -50px 0 25px;
+}
+
+.section-wide {
 	padding: 15px 0;
-	margin: 50px 0;
+	border-radius: 0;
+	text-align: center;
 	background-color: white;
 }
 
@@ -150,7 +168,6 @@ input:focus {
 	margin: 0 -5px;
 	height: 70px;
 	font-size: 20px;
-	font-weight: lighter;
 	color: white;
 }
 
@@ -195,11 +212,10 @@ input:focus {
 	margin-right: 25px;
 }
 
-/* HOME PAGE */
+
+/* FIND PACKAGE */
 
 .find-package {
-	background-color: white;
-	margin-top: 0;
 	text-align: center;
 }
 
@@ -210,6 +226,9 @@ input:focus {
 .find-package input {
 	width: 250px;
 }
+
+
+/* HOME PAGE */
 
 .usage {
 	background-color: white;
@@ -276,9 +295,6 @@ input:focus {
 
 
 /* STATISTICS */
-.statistics-list {
-	padding: 25px;
-}
 
 .statistics {
 	text-align: center;
@@ -317,6 +333,32 @@ input:focus {
 }
 
 /* PACKAGE LIST */
+
+.packages-title {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.packages-title * {
+	display: inline-block;
+}
+
+.packages-title h3 {
+	margin: 5px 10px 0;
+}
+
+.packages-title .fa {
+	font-size: 36px;
+	color: #BBB;
+}
+
+.packages-title .fa:hover {
+	color: #888;
+	cursor: pointer;
+}
+
 
 .package-list {
 	padding-top: 30px;

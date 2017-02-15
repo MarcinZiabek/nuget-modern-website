@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NugetWebsiteModern.Repositories
 {
-    interface IDistributionsRepository
+	public interface IDistributionsRepository
     {
 		Task<List<DistributionCategory>> GetDistributions();
 	}
