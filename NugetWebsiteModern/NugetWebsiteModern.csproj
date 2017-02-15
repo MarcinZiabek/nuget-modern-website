@@ -53,6 +53,12 @@
     <None Update="Models\Statistics.d.ts">
       <DependentUpon>Statistics.cs</DependentUpon>
     </None>
+    <None Update="Program.d.ts">
+      <DependentUpon>Program.cs</DependentUpon>
+    </None>
+    <None Update="Repositories\DistributionsRepository.d.ts">
+      <DependentUpon>DistributionsRepository.cs</DependentUpon>
+    </None>
     <None Update="Repositories\IDistributionsRepository.d.ts">
       <DependentUpon>IDistributionsRepository.cs</DependentUpon>
     </None>

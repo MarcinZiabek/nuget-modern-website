@@ -36,11 +36,11 @@
 					</div>
 
 					<div class="buttons col-sm-9">
-						<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-						<a asp-area="" asp-controller="Package" asp-action="List" class="active">Packages</a>
+						<a asp-area="" asp-controller="Home" asp-action="Index" menu-highlight="/Home/Index" class="kupa">Home</a>
+						<a asp-area="" asp-controller="Package" asp-action="List" menu-highlight="/Package/*">Packages</a>
 						<a href="https://docs.microsoft.com/en-us/nuget/">Documentation</a>
-						<a asp-area="" asp-controller="Home" asp-action="Download">Download</a>
-						<a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
+						<a asp-area="" asp-controller="Home" asp-action="Download" menu-highlight="/Home/Download">Download</a>
+						<a asp-area="" asp-controller="Home" asp-action="Blog" menu-highlight="/Home/Blog">Blog</a>
 					</div>
 
 				</div>
