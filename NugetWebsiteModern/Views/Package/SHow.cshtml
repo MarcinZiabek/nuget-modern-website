@@ -1,20 +1,85 @@
 @using NugetWebsiteModern.Models;
 
 @{
-	var Packagee = ViewData["Package"] as Package;
+	var package = ViewData["Package"] as Package;
 }
 
-<h3>@Packagee.Id</h3>
-@Packagee.Summary
 
+<div class="package container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="section">
 
-<div class="container">
-	<div class="find-package section-first section">
+				<div class="image">
+					@if (!String.IsNullOrEmpty(package.IconUrl))
+					{
+						<img src="@package.IconUrl" alt="No icon" />
+					}
+					else
+					{
+						<i class="no-icon fa fa-code"></i>
+					}
+				</div>
 
-		<form action="/Home/Packages" method="get">
-			<input type="text" name="query" placeholder="Find other packages" value='@ViewData["Query"]' />
-			<button class="text-button" type="submit">Search</button>
-		</form>
+				<div class="characteristic">
+					<i class="fa fa-download pull-left" aria-hidden="true"></i>
+					<h3>3.048.544</h3>
+					<p>Downloads</p>
+				</div>
 
+				<div class="characteristic">
+					<i class="fa fa-code-fork pull-left" aria-hidden="true"></i>
+					<h3>9.0.1</h3>
+					<p>Current version</p>
+				</div>
+
+				<div class="characteristic">
+					<i class="fa fa-calendar pull-left" aria-hidden="true"></i>
+					<h3>3.048.544</h3>
+					<p>Last update</p>
+				</div>
+
+				<div class="characteristic link">
+					<i class="fa fa-link pull-left" aria-hidden="true"></i>
+					<h3>Webpage</h3>
+				</div>
+
+				<div class="characteristic link">
+					<i class="fa fa-envelope-o pull-left" aria-hidden="true"></i>
+					<h3>Contact owners</h3>
+				</div>
+
+				<div class="characteristic link">
+					<i class="fa fa-file-text-o pull-left" aria-hidden="true"></i>
+					<h3>License</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-8">
+			<div class="section">
+
+				<h2>@package.Id</h2>
+				@package.Description
+
+				<h3>Installation</h3>
+
+				<div class="installation-box">
+					PM > Install-Package NUnit
+				</div>
+
+				<h3>Release notes</h3>
+				<p>Lorem ipsum dolor sit amet</p>
+
+				<h3>Owners</h3>
+				<p>Lorem ipsum dolor sit amet</p>
+
+				<h3>Tags</h3>
+				<p>Lorem ipsum dolor sit amet</p>
+
+			</div>
+		</div>
 	</div>
 </div>
+
