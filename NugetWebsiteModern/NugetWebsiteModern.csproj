@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>True</Optimize>
+    <Optimize>False</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,10 +45,16 @@
       <DependentUpon>Distribution.cs</DependentUpon>
     </None>
     <None Update="Models\Package.d.ts">
-      <DependentUpon>Package.cs</DependentUpon>
+      <DependentUpon>PackageInfo.cs</DependentUpon>
+    </None>
+    <None Update="Models\PackageDetails.d.ts">
+      <DependentUpon>PackageVersions.cs</DependentUpon>
     </None>
     <None Update="Models\PackageList.d.ts">
       <DependentUpon>PackageList.cs</DependentUpon>
+    </None>
+    <None Update="Models\PackageVersion.d.ts">
+      <DependentUpon>PackageVersion.cs</DependentUpon>
     </None>
     <None Update="Models\Statistics.d.ts">
       <DependentUpon>Statistics.cs</DependentUpon>
@@ -64,6 +70,12 @@
     </None>
     <None Update="Repositories\IStatisticsRepository.d.ts">
       <DependentUpon>IStatisticsRepository.cs</DependentUpon>
+    </None>
+    <None Update="Repositories\PackageRepository.d.ts">
+      <DependentUpon>PackageRepository.cs</DependentUpon>
+    </None>
+    <None Update="Repositories\StatisticsRepository.d.ts">
+      <DependentUpon>StatisticsRepository.cs</DependentUpon>
     </None>
     <None Update="Startup.d.ts">
       <DependentUpon>Startup.cs</DependentUpon>

@@ -2,6 +2,7 @@
 using NugetWebsiteModern.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -18,11 +19,15 @@ namespace NugetWebsiteModern.Repositories
 			return result;
 		}
 
-		public async Task<Package> GetPackage(string id)
+		public async Task<PackageInfo> GetPackage(string id)
 		{
-			var packages = GetPackages(id).Result.Data;
-			var package = packages.SingleOrDefault(p => p.Id == id);
-			return await Task.FromResult(package);
+			HttpClient client = new HttpClient();
+			var resultString = await client.GetStringAsync($"https://api.nuget.org/v3/registration0/{id.ToLower()}/index.json");
+
+			var packageContainer = JsonConvert.DeserializeObject<PackageVersionsContainer>(resultString);
+			var package = packageContainer.GetVersions();
+
+			return await Task.FromResult(package.GetLastestVersion());
 		}
 	}
 }

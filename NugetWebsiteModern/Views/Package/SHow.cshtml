@@ -1,7 +1,7 @@
 @using NugetWebsiteModern.Models;
 
 @{
-	var package = ViewData["Package"] as Package;
+	var package = ViewData["Package"] as PackageInfo;
 }
 
 
@@ -41,17 +41,17 @@
 
 				<div class="characteristic link">
 					<i class="fa fa-link pull-left" aria-hidden="true"></i>
-					<h3>Webpage</h3>
+					<h4>Webpage</h4>
 				</div>
 
 				<div class="characteristic link">
 					<i class="fa fa-envelope-o pull-left" aria-hidden="true"></i>
-					<h3>Contact authors</h3>
+					<h4>Contact authors</h4>
 				</div>
 
 				<div class="characteristic link">
 					<i class="fa fa-file-text-o pull-left" aria-hidden="true"></i>
-					<h3>License</h3>
+					<h4>License</h4>
 				</div>
 
 			</div>
@@ -61,7 +61,7 @@
 			<div class="section">
 
 				<div class="title">
-					<h2>@package.Id</h2>
+					<h2>@package.Title</h2>
 					<p>
 						by
 
@@ -71,6 +71,11 @@
 						}
 					</p>
 				</div>
+
+				<p>@package.Id.ToLower()</p>
+				<p>@package.Title</p>
+				<p>@package.DataUrl</p>
+				
 
 				<p style="white-space: pre-line">
 					@package.Description

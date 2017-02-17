@@ -9,6 +9,6 @@ namespace NugetWebsiteModern.Repositories
 	public interface IPackageRepository
     {
 		Task<PackageList> GetPackages(string query = "", int page = 0);
-		Task<Package> GetPackage(string id);
+		Task<PackageInfo> GetPackage(string id);
 	}
 }
