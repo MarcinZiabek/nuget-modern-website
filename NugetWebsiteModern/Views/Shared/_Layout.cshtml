@@ -40,7 +40,7 @@
 						<a asp-area="" asp-controller="Package" asp-action="List" menu-highlight="/Package/*">Packages</a>
 						<a href="https://docs.microsoft.com/en-us/nuget/">Documentation</a>
 						<a asp-area="" asp-controller="Home" asp-action="Download" menu-highlight="/Home/Download">Download</a>
-						<a asp-area="" asp-controller="Home" asp-action="Blog" menu-highlight="/Home/Blog">Blog</a>
+						<a href="http://blog.nuget.org/">Blog</a>
 					</div>
 
 				</div>
@@ -51,34 +51,6 @@
 		<div class="site-content">
 			@RenderBody()
 		</div>
-
-		<!--<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">NugetWebsiteModern</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-						<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-						<li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="container body-content">
-			@RenderBody()
-			<hr />
-			<footer>
-				<p>&copy; 2017 - NugetWebsiteModern</p>
-			</footer>
-		</div>-->
 
 		<environment names="Development">
 			<script src="~/lib/jquery/dist/jquery.js"></script>

@@ -19,17 +19,10 @@ namespace NugetWebsiteModern.Controllers
         public IActionResult Index()
         {
 			ViewData["Statistics"] = StatisticsRepositiory.GetStatistics().Result;
-
             return View();
         }
 
-
 		public IActionResult Download()
-		{
-			return View();
-		}
-
-		public IActionResult Blog()
 		{
 			return View();
 		}
