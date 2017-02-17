@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NugetWebsiteModern.Models;
 using System;
 using System.Collections.Generic;
@@ -11,23 +12,29 @@ namespace NugetWebsiteModern.Repositories
 {
     public class PackageRepository : IPackageRepository
     {
-		public async Task<PackageList> GetPackages(string query = "", int page = 0)
+		public async Task<PackageQueryResult> GetPackages(string query = "", int page = 0)
 		{
 			HttpClient client = new HttpClient();
 			var resultString = await client.GetStringAsync($"https://api-v2v3search-0.nuget.org/query?q={query}&page={page}");
-			var result = JsonConvert.DeserializeObject<PackageList>(resultString);
+			var result = JsonConvert.DeserializeObject<PackageQueryResult>(resultString);
 			return result;
 		}
 
-		public async Task<PackageInfo> GetPackage(string id)
+		public async Task<PackageDetails> GetPackage(string id)
 		{
 			HttpClient client = new HttpClient();
 			var resultString = await client.GetStringAsync($"https://api.nuget.org/v3/registration0/{id.ToLower()}/index.json");
 
-			var packageContainer = JsonConvert.DeserializeObject<PackageVersionsContainer>(resultString);
-			var package = packageContainer.GetVersions();
+			JObject json_data = JObject.Parse(resultString);
+			var json_versions = json_data["items"][0]["items"];
 
-			return await Task.FromResult(package.GetLastestVersion());
+			var package_versions = json_versions.ToObject<List<PackageVersion>>();
+			var result = package_versions.Select(v => v.Package).OrderByDescending(p => p.Version).First();
+
+			// hack to get number of downloads:
+			result.TotalDownloads = GetPackages(id).Result.Data.First().TotalDownloads;
+
+			return await Task.FromResult(result);
 		}
 	}
 }

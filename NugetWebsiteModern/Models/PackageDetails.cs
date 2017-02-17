@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NugetWebsiteModern.Models
 {
-    public class PackageInfo
+    public class PackageDetails
     {
 		[JsonProperty("@id")]
 		public string DataUrl { get; set; }
@@ -19,11 +19,10 @@ namespace NugetWebsiteModern.Models
 		public string IconUrl { get; set; }
 		public string ProjectUrl { get; set; }
 		public string LicenseUrl { get; set; }
-
+		public string PackageContent { get; set; }
 		public int TotalDownloads { get; set; }
-		public string CommitTimeStamp { get; set; }
-
-		public List<string> Authors { get; set; }
+		public DateTime Published { get; set; }
+		public string Authors { get; set; }
 		public List<string> Tags { get; set; }
 	}
 }

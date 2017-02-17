@@ -13,6 +13,6 @@ namespace NugetWebsiteModern.Models
 		public string File { get; set; }
 
 		[JsonProperty("catalogEntry")]
-		public PackageInfo Package { get; set; }
+		public PackageDetails Package { get; set; }
 	}
 }

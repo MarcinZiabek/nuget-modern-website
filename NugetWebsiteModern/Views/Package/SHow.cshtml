@@ -1,7 +1,7 @@
 @using NugetWebsiteModern.Models;
 
 @{
-	var package = ViewData["Package"] as PackageInfo;
+	var package = ViewData["Package"] as PackageDetails;
 }
 
 
@@ -35,25 +35,23 @@
 
 				<div class="characteristic">
 					<i class="fa fa-calendar pull-left" aria-hidden="true"></i>
-					<h3>-</h3>
+					<h3>@package.Published.ToString("d")</h3>
 					<p>Last update</p>
 				</div>
 
-				<div class="characteristic link">
-					<i class="fa fa-link pull-left" aria-hidden="true"></i>
-					<h4>Webpage</h4>
-				</div>
+				<a href="@package.ProjectUrl">
+					<div class="characteristic link">
+						<i class="fa fa-link pull-left" aria-hidden="true"></i>
+						<h4>Webpage</h4>
+					</div>
+				</a>
 
-				<div class="characteristic link">
-					<i class="fa fa-envelope-o pull-left" aria-hidden="true"></i>
-					<h4>Contact authors</h4>
-				</div>
-
-				<div class="characteristic link">
-					<i class="fa fa-file-text-o pull-left" aria-hidden="true"></i>
-					<h4>License</h4>
-				</div>
-
+				<a href="@package.LicenseUrl">
+					<div class="characteristic link">
+						<i class="fa fa-file-text-o pull-left" aria-hidden="true"></i>
+						<h4>License</h4>
+					</div>
+				</a>
 			</div>
 		</div>
 
@@ -72,11 +70,6 @@
 					</p>
 				</div>
 
-				<p>@package.Id.ToLower()</p>
-				<p>@package.Title</p>
-				<p>@package.DataUrl</p>
-				
-
 				<p style="white-space: pre-line">
 					@package.Description
 				</p>
@@ -91,7 +84,9 @@
 
 				@foreach (var tag in @package.Tags)
 				{
-					<span class="tag">@tag</span>
+					<a href="/Package/List?query=@tag">
+						<span class="tag">@tag</span>
+					</a>
 				}
 			</div>
 		</div>

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace NugetWebsiteModern.Models
 {
-    public class PackageList
+    public class PackageQueryResult
     {
 		public int TotalHits { get; set; }
-		public List<PackageInfo> Data { get; set; }
+		public List<PackageOverview> Data { get; set; }
     }
 }

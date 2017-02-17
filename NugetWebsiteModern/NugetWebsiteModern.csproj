@@ -51,7 +51,10 @@
       <DependentUpon>PackageVersions.cs</DependentUpon>
     </None>
     <None Update="Models\PackageList.d.ts">
-      <DependentUpon>PackageList.cs</DependentUpon>
+      <DependentUpon>PackageQueryResult.cs</DependentUpon>
+    </None>
+    <None Update="Models\PackageOverview.d.ts">
+      <DependentUpon>PackageOverview.cs</DependentUpon>
     </None>
     <None Update="Models\PackageVersion.d.ts">
       <DependentUpon>PackageVersion.cs</DependentUpon>

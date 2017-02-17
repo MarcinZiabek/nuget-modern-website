@@ -8,7 +8,7 @@ namespace NugetWebsiteModern.Repositories
 {
 	public interface IPackageRepository
     {
-		Task<PackageList> GetPackages(string query = "", int page = 0);
-		Task<PackageInfo> GetPackage(string id);
+		Task<PackageQueryResult> GetPackages(string query = "", int page = 0);
+		Task<PackageDetails> GetPackage(string id);
 	}
 }
