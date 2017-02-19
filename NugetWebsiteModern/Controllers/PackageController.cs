@@ -11,6 +11,8 @@ namespace NugetWebsiteModern.Controllers
     {
 		private IPackageRepository PackageRepository { get; set; }
 
+		private const int PackagePageSize = 20;
+
 		public PackageController(IPackageRepository packageRepository)
 		{
 			PackageRepository = packageRepository;
@@ -18,7 +20,7 @@ namespace NugetWebsiteModern.Controllers
 
 		public IActionResult List([FromQuery] string query = "", [FromQuery] int page = 0)
 		{
-			var packages = PackageRepository.GetPackages(query, page).Result;
+			var packages = PackageRepository.SearchPackage(query, skip: PackagePageSize*page, take: PackagePageSize).Result;
 
 			ViewData["Query"] = query;
 			ViewData["Page"] = page;

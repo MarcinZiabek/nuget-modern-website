@@ -4,6 +4,10 @@
 	ViewData["Title"] = "Home Page";
 
 	var packages = ViewData["Packages"] as List<PackageOverview>;
+	var page_number = (int)ViewData["Page"] + 1;
+
+	var previous_page = (int)ViewData["Page"] - 1;
+	var next_page = (int)ViewData["Page"] + 1;
 }
 
 <div class="container">
@@ -17,7 +21,7 @@
 	</div>
 </div>
 
-<div class="section-wide section">
+<div class="package-query-title section-wide section text-center">
 	@{ 
 		var query = @ViewData["Query"];
 
@@ -30,14 +34,17 @@
 	@if (String.IsNullOrWhiteSpace(ViewData["Query"] as string))
 	{
 		<h3>Popular packages</h3>
+		<p>Page @page_number</p>
 	}
-	else if((int)ViewData["Results"] != 0)
+	else if ((int)ViewData["Results"] != 0)
 	{
 		<h3>@ViewData["Results"] results for "@ViewData["Query"]"</h3>
+		<p>Page @page_number</p>
 	}
 	else
 	{
 		<h3>Sorry, there is no package like "@ViewData["Query"]"</h3>
+		<p>Just try again</p>
 	}
 
 </div>
@@ -92,6 +99,18 @@
 			</a>
 		}
 
+	</div>
+
+	<div class="row text-center">
+		@if ((int)ViewData["Results"] != 0)
+		{
+			@if (previous_page >= 0)
+			{
+				<a href="/Package/List?query=@ViewData["Query"]&page=@previous_page" class="text-button">Previous page</a>
+			}
+
+			<a href="/Package/List?query=@ViewData["Query"]&page=@next_page" class="text-button">Next page</a>
+		}
 	</div>
 </div>
 

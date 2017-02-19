@@ -421,6 +421,16 @@ input:focus {
 
 .package-list {
 	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.package-query-title h3 {
+	margin-bottom: 5px;
+}
+
+.package-query-title p {
+	text-align: center;
+	font-size: 16px;
 }
 
 .package-item {
