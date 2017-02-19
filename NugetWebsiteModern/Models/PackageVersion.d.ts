@@ -13,8 +13,9 @@ declare module server {
 			iconUrl: string;
 			projectUrl: string;
 			licenseUrl: string;
+			packageContent: string;
 			totalDownloads: number;
-			commitTimeStamp: string;
+			commitTimeStamp: Date;
 			authors: string[];
 			tags: string[];
 		};

@@ -27,25 +27,29 @@ namespace NugetWebsiteModern.Repositories
 			var resultString = await client.GetStringAsync($"https://api.nuget.org/v3/registration0/{id.ToLower()}/index.json");
 
 			JObject json_data = JObject.Parse(resultString);
-			var json_versions = json_data["items"].Last();
+			var json_versions = json_data["items"][0];
 
-			PackageDetails package = new PackageDetails();
-			var package_simple = GetPackages(id).Result.Data.First();
+			var package_versions = json_versions["items"].ToObject<List<PackageVersion>>();
+			var version = package_versions.Where(v => v.Package.Listed).OrderByDescending(v => v.Package.Version).First();
+
+			/*PackageVersion version = new PackageVersion();
 
 			// hack to get package (API changes over packages)
 			try
 			{
-				var package_versions = json_versions["items"].ToObject<List<PackageVersion>>();
-				package = package_versions.OrderByDescending(v => v.Package.Version).First().Package;
-
-				// hack to get number of downloads:
-				package.TotalDownloads = GetPackages(id).Result.Data.First().TotalDownloads;
+				
+				
 			}
 			catch
 			{
-				resultString = await client.GetStringAsync($"https://api-v2v3search-0.nuget.org/query?q={id}");
-				package = JObject.Parse(resultString)["data"][0].ToObject<PackageDetails>(); ;
-			}
+				version = json_versions.ToObject<PackageVersion>();
+			}*/
+
+			var package = version.Package;
+			package.CommitTimeStamp = version.CommitTimeStamp;
+
+			// hack to get number of downloads:
+			package.TotalDownloads = GetPackages(id).Result.Data.First().TotalDownloads;
 
 			return await Task.FromResult(package);
 		}

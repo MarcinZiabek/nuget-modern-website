@@ -35,7 +35,7 @@
 
 				<div class="characteristic">
 					<i class="fa fa-calendar pull-left" aria-hidden="true"></i>
-					<h3>@package.Published.ToString("d")</h3>
+					<h3>@package.CommitTimeStamp.ToString("d")</h3>
 					<p>Last update</p>
 				</div>
 
@@ -80,14 +80,18 @@
 					PM > Install-Package NUnit
 				</div>
 
-				<h3>Tags</h3>
-
-				@foreach (var tag in @package.Tags)
+				@if(package.Tags.Count != 0)
 				{
-					<a href="/Package/List?query=@tag">
-						<span class="tag">@tag</span>
-					</a>
+					<h3>Tags</h3>
+
+					@foreach (var tag in @package.Tags)
+					{
+						<a href="/Package/List?query=@tag">
+							<span class="tag">@tag</span>
+						</a>
+					}
 				}
+
 			</div>
 		</div>
 	</div>

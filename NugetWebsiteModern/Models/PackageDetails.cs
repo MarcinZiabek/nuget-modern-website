@@ -21,8 +21,9 @@ namespace NugetWebsiteModern.Models
 		public string LicenseUrl { get; set; }
 		public string PackageContent { get; set; }
 		public int TotalDownloads { get; set; }
-		public DateTime Published { get; set; }
-		public List<string> Authors { get; set; }
+		public bool Listed { get; set; }
+		public DateTime CommitTimeStamp { get; set; }
+		public string Authors { get; set; }
 		public List<string> Tags { get; set; }
 	}
 }
