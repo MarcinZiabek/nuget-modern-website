@@ -12,6 +12,7 @@ namespace NugetWebsiteModern.Models
 		public string DataUrl { get; set; }
 
 		public string Id { get; set; }
+		public string Summary { get; set; }
 		public string Version { get; set; }
 		public string Title { get; set; }
 		public string IconUrl { get; set; }

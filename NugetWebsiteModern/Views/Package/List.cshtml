@@ -47,10 +47,10 @@
 
 		@foreach (var package in packages)
 		{
-			<a href="/Package/Show/@package.Id.ToLower()">
+			<a href="/Package/Show/@package.Id.ToLower()" title="@package.Summary">
 				<div class="col-lg-3 col-md-4 col-sm-6">
 					<div class="package-item">
-						<div class="package-overlay"></div>
+						<div class="package-overlay hidden-sm hidden-xs"></div>
 
 						<div class="image">
 							@if (!String.IsNullOrEmpty(package.IconUrl))
@@ -79,8 +79,14 @@
 									<i class="fa fa-download"></i><downloads Number="@package.TotalDownloads"></downloads>
 								</span>
 							</span>
-
 						</div>
+
+						@if (!String.IsNullOrEmpty(package.Summary))
+						{
+							<p class="package-summary hidden-lg hidden-md">
+								@package.Summary
+							</p>
+						}
 					</div>
 				</div>
 			</a>
