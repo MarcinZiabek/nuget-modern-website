@@ -31,13 +31,13 @@ namespace NugetWebsiteModern.Repositories
 
 			if (json_versions.Count() != 1)
 			{
-				var new_address = json_versions.OrderByDescending(v => v["upper"]).First()["@id"];
+				var new_address = json_versions.OrderByDescending(v => v["upper"]).Last()["@id"];
 				resultString = await client.GetStringAsync((string)new_address);
 				json_versions = JObject.Parse(resultString);
 			}
 			else
 			{
-				json_versions = json_versions[0];
+				json_versions = json_versions.Last();
 
 			}
 

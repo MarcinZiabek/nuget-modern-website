@@ -667,6 +667,7 @@ input:focus {
 	border-radius: 15px;
 	margin-bottom: 25px;
 	text-align: center;
+	height: 260px;
 	padding: 15px;
 	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
 }
