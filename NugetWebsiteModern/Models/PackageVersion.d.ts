@@ -15,8 +15,9 @@ declare module server {
 			licenseUrl: string;
 			packageContent: string;
 			totalDownloads: number;
+			listed: boolean;
 			commitTimeStamp: Date;
-			authors: string[];
+			authors: string;
 			tags: string[];
 		};
 	}

@@ -20,25 +20,23 @@ namespace NugetWebsiteModern.Repositories
 			var result = JsonConvert.DeserializeObject<PackageQueryResult>(resultString);
 			return result;
 		}
-		
+
 		public async Task<PackageDetails> GetPackage(string id)
 		{
 			HttpClient client = new HttpClient();
 			var resultString = await client.GetStringAsync($"https://api.nuget.org/v3/registration0/{id.ToLower()}/index.json");
 
 			JObject json_data = JObject.Parse(resultString);
-			var json_versions = json_data["items"];
+			var json_versions = json_data["items"]
+				.OrderByDescending(v => v["upper"])
+				.First();
 
-			if (json_versions.Count() != 1)
+			// there is a need to download data using provided hyperlink
+			if(json_versions["items"] == null)
 			{
-				var new_address = json_versions.OrderByDescending(v => v["upper"]).Last()["@id"];
+				var new_address = json_versions["@id"];
 				resultString = await client.GetStringAsync((string)new_address);
 				json_versions = JObject.Parse(resultString);
-			}
-			else
-			{
-				json_versions = json_versions.Last();
-
 			}
 
 			var package_versions = json_versions["items"].ToObject<List<PackageVersion>>();
