@@ -659,48 +659,43 @@ input:focus {
 
 .download-title h3 {
 	text-align: center;
-	margin: 0px;
+	margin: 10px 0 20px;
 }
 
-.distribution-category {
-	background-color: white;
-	border-radius: 15px;
-	margin-bottom: 25px;
-	text-align: center;
-	height: 260px;
-	padding: 15px;
-	box-shadow: 0 0 5px rgba(96, 96, 96, 0.1);
+.download-title table {
+	margin: 0px auto;
+	width: 100%;
+	max-width: 400px;
 }
 
-.distribution-category .title {
-	background-color: #BBB;
-	border-radius: 15px 15px 0px 0px;
-	text-shadow: 0 0 20px rgba(96, 96, 96, 0.25);
-	padding: 10px 5px;
-	margin: -15px -15px 15px;
+.download-title tr:hover td {
+	background-color: #F4F4F4;
+	cursor: pointer;
 }
 
-.distribution-category:hover .title {
-	background-color: #40BCFF;
+.download-title tr {
+	border: 1px solid #DDD;
+	border-width: 1px 0px 0px;
 }
 
-.distribution-category .title h3 {
-	color: white;
-	margin: 3px 0 0;
+.download-title tr:first-child {
+	border: none;
 }
 
-.distribution-category .links-list {
-	margin-top: 25px;
+.download-title td {
+	padding: 10px;
 }
 
-.distribution-category .links-list a {
-	display: block;
-	color: #777;
+.download-title tr td:first-child {
+	border-radius: 5px 0px 0px 5px;
 }
 
-.distribution-category .links-list a:hover {
+.download-title tr td:last-child {
+	border-radius: 0px 5px 5px 0px;
+}
+
+.download-title tr:hover td:last-child {
 	color: #1583E9;
-	text-decoration: underline;
 }
 
 /* FOOTER */
