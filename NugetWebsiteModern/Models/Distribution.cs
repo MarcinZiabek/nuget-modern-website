@@ -8,7 +8,8 @@ namespace NugetWebsiteModern.Models
 	public class Distribution
 	{
 		public string Name { get; set; }
-		public Uri Link { get; set; }
+		public string Version { get; set; }
+		public string Link { get; set; }
 	}
 
 	public class DistributionCategory

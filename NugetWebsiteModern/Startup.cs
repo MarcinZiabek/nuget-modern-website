@@ -32,6 +32,7 @@ namespace NugetWebsiteModern
 
 			services.AddSingleton<IStatisticsRepository, StatisticsRepository>();
 			services.AddSingleton<IPackageRepository, PackageRepository>();
+			services.AddSingleton<IDistributionsRepository, DistributionsRepository>();
 		}
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

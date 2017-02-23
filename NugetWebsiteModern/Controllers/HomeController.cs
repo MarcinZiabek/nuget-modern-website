@@ -10,10 +10,14 @@ namespace NugetWebsiteModern.Controllers
     public class HomeController : Controller
     {
 		private IStatisticsRepository StatisticsRepositiory;
+		private IDistributionsRepository DistributionRepository;
 
-		public HomeController(IStatisticsRepository statisticsRepositiory)
+		public HomeController(
+			IStatisticsRepository statisticsRepositiory,
+			IDistributionsRepository distributionRepository)
 		{
 			StatisticsRepositiory = statisticsRepositiory;
+			DistributionRepository = distributionRepository;
 		}
 
         public IActionResult Index()
@@ -24,6 +28,7 @@ namespace NugetWebsiteModern.Controllers
 
 		public IActionResult Download()
 		{
+			ViewData["Distributions"] = DistributionRepository.GetDistributions().Result;
 			return View();
 		}
 
